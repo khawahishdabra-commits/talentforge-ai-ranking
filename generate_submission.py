@@ -54,7 +54,8 @@ proficiency_bonus = {
 results = []
 
 ## Read Candidate
-with open("sample_candidates.jsonl","r",encoding="utf-8") as f:
+INPUT_FILE = "sample_candidates.jsonl"
+with open(INPUT_FILE,"r",encoding="utf-8") as f:
 
     for line in f:
 
