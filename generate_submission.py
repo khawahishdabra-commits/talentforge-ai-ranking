@@ -55,7 +55,7 @@ results = []
 
 ## Read Candidate
 INPUT_FILE = "sample_candidates.jsonl"
-with open(INPUT_FILE,"r",encoding="utf-8") as f:
+with open(INPUT_FILE,"r",encoding="utf-8-sig") as f:
 
     for line in f:
 
