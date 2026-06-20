@@ -27,7 +27,7 @@ ai_keywords = [
     "data scientist",
     "applied scientist",
     "recommendation",
-    "retreival",
+    "retrieval",
     "ranking",
     "llm"
 ]
@@ -118,10 +118,10 @@ with open(INPUT_FILE,"r",encoding="utf-8") as f:
         if signals["open_to_work_flag"]:
             signal_score  += 5
 
-        signal_score += signals["github_activity_score"]
+        signal_score += max(0,signals["github_activity_score"])
         signal_score += signals["recruiter_response_rate"]*10
         signal_score += signals["interview_completion_rate"]*10
-        signal_score += signals["offer_acceptance_rate"]*10
+        signal_score += max(0,signals["offer_acceptance_rate"])*10
         signal_score += signals["saved_by_recruiters_30d"]
         signal_score += signals["profile_completeness_score"]*0.2
         notice = signals["notice_period_days"]
